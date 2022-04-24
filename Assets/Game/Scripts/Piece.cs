@@ -47,7 +47,8 @@ public class Piece : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHan
     {
         GamePlayControllerKhanh.Instance.lockOnEnter = false;
         transform.localScale = Vector3.one;
-        rectTrans.anchoredPosition = Vector3.zero;
+        //rectTrans.anchoredPosition = Vector3.zero;
+        rectTrans.DOAnchorPos(Vector3.zero, 0.2f);
         isDragged = false;
     }
     public void OnPointerDown(PointerEventData eventData)
@@ -68,7 +69,7 @@ public class Piece : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHan
         {
             GamePlayControllerKhanh.Instance.lockOnEnter = false;
             transform.localScale = Vector3.one;
-            rectTrans.anchoredPosition = Vector3.zero;
+            rectTrans.DOAnchorPos(Vector3.zero, 0.2f);
         }
     }
 }

@@ -9,6 +9,7 @@ public class GamePlayControllerKhanh : MonoBehaviour
     public bool lockOnEnter = false;
     public Transform doneCanvas;
     public List<GoalsPost> goalsPosts;
+    public GameSence gameSence;
     private void Awake()
     {
         Instance = this;
@@ -34,7 +35,5 @@ public class GamePlayControllerKhanh : MonoBehaviour
             goalsPosts[i].transform.SetSiblingIndex(i);
         }
     }
-        
-      
-
+    
 }

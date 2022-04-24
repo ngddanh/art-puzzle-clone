@@ -10,7 +10,6 @@ public class GoalsPost : MonoBehaviour, IDropHandler, IPointerEnterHandler
     public Image thumnails;
     public Slot slot;
     public bool wasActive;
-    int speedFade = 255;
 
     public void OnDrop(PointerEventData eventData)
     {

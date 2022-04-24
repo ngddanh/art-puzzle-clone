@@ -33,7 +33,8 @@ public class GoalsPost : MonoBehaviour, IDropHandler, IPointerEnterHandler
                 GamePlayControllerKhanh.Instance.level.currentGrass.CheckAllGoalsPost();
               //  this.transform.GetComponentInParent<Grass>().CheckAllGoalsPost();
                 //this.transform.SetParent(GamePlayControllerKhanh.Instance.doneCanvas);
-                GamePlayControllerKhanh.Instance.SortingLayer(this.id, this.gameObject);
+                GamePlayControllerKhanh.Instance.SortingLayer( this);
+                GamePlayControllerKhanh.Instance.lockOnEnter = false;
             }
         }
      

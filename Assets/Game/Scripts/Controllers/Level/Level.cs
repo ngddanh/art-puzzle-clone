@@ -59,7 +59,7 @@ public class Level : MonoBehaviour
         var nearestPos = Vector2.Distance(config.layers[indexOfLayer].correctPos[indexOfCorPos].piece.transform.position, config.layers[indexOfLayer].correctPos[indexOfCorPos].trans.position);
         if (nearestPos < 1f)
         {
-            config.layers[indexOfLayer].correctPos[indexOfCorPos].piece.isDone = true;
+            //config.layers[indexOfLayer].correctPos[indexOfCorPos].piece.isDone = true;
             config.layers[indexOfLayer].correctPos[indexOfCorPos].piece.transform.SetParent(config.layers[indexOfLayer].correctPos[indexOfCorPos].trans);
             config.layers[indexOfLayer].correctPos[indexOfCorPos].piece.transform.position = config.layers[indexOfLayer].correctPos[indexOfCorPos].trans.position;
             if (config.layers[indexOfLayer].correctPos[indexOfCorPos].isDoneMove == false)

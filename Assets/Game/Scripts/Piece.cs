@@ -9,12 +9,12 @@ public class Piece : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHan
 {
     //public Transform correctPosition;
     [SerializeField] private Canvas canvas;
-    public bool isDone;
     public int id;
-    public bool isDragged;
+    protected bool isDragged;
+    protected bool isDone;
     protected RectTransform rectTrans;
     protected Vector3 startScale;
-    public GameObject parent;
+    public int scaleValue = 2;
     //public float scaleValue = 1.1f;
 
     public void Start()
@@ -39,7 +39,7 @@ public class Piece : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHan
             isDragged = true;
             GamePlayControllerKhanh.Instance.lockOnEnter = true;
             //transform.localScale = new Vector3(scaleValue, scaleValue, scaleValue);
-            this.gameObject.GetComponent<RectTransform>().DOScale(2f, 0.2f);
+            this.gameObject.GetComponent<RectTransform>().DOScale(scaleValue, 0.2f);
         }
     }
 

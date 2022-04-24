@@ -8,6 +8,7 @@ public class GamePlayControllerKhanh : MonoBehaviour
     public SampleLevel level;
     public bool lockOnEnter = false;
     public Transform doneCanvas;
+    public List<GoalsPost> goalsPosts;
     private void Awake()
     {
         Instance = this;
@@ -16,27 +17,24 @@ public class GamePlayControllerKhanh : MonoBehaviour
     {
         // level = isnsdsdasd load level theo currentLevel
         level.Init();
+        goalsPosts.Clear();
     }
-    public void SortingLayer( int param, GameObject og)
+    public void SortingLayer(GoalsPost og)
     {
-        if(doneCanvas.childCount == 0)
+        goalsPosts.Add(og);
+        og.transform.SetParent(doneCanvas);
+        goalsPosts.Sort(delegate (GoalsPost gp1, GoalsPost gp2)
         {
-            og.transform.SetParent(doneCanvas);
-        }
-        else
+            int a = gp1.id;
+            int b = gp2.id;
+            return a.CompareTo(b);
+        });
+       for(int i = 0; i < goalsPosts.Count; i ++)
         {
-            if (doneCanvas.GetChild(doneCanvas.childCount - 1).GetComponent<GoalsPost>().id < param)
-            {
-                og.transform.SetParent(doneCanvas);
-                og.transform.SetSiblingIndex(doneCanvas.childCount - 1);
-
-
-            }
-            else if (doneCanvas.GetChild(doneCanvas.childCount - 1).GetComponent<GoalsPost>().id > param)
-            {
-                og.transform.SetParent(doneCanvas);
-            }
+            goalsPosts[i].transform.SetSiblingIndex(i);
         }
     }
+        
+      
 
 }
